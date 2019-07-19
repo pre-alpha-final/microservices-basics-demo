@@ -15,4 +15,8 @@
     <PackageReference Include="Microsoft.ServiceFabric.AspNetCore.Kestrel" Version="3.3.622" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>
