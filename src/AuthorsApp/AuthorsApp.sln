@@ -7,6 +7,22 @@ Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "AuthorsApp", "AuthorsApp\Au
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorsApp.Api", "AuthorsApp.Api\AuthorsApp.Api.csproj", "{D318FF4F-A0DD-447A-8847-7C3AB6D59F43}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 Deployment layer", "00 Deployment layer", "{534F6BB1-2508-452E-ACE5-8690BA1771A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 Presentation layer", "10 Presentation layer", "{C2EE023B-32CC-4BA0-BD99-E4F6B7A4712B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11 Stateless services", "11 Stateless services", "{854ACA02-8A51-4CD6-8DF4-6E4129A04841}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12 Stateful services", "12 Stateful services", "{1DE3AB1B-D358-4A33-85A5-35B33CB5B0F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30 Domain layer", "30 Domain layer", "{4A1AB51B-BDAD-4839-BB60-D532AC0A676A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 Business layer", "20 Business layer", "{FBDF99E4-C54C-4376-AD48-2F9011FC5FFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40 Data layer", "40 Data layer", "{6E3FE5DC-31A9-4D9E-AD33-C03D410C0F3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "50 Cross-Cutting layer", "50 Cross-Cutting layer", "{DD700438-1CE1-4B23-9615-D86C56204983}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +50,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FE1638D8-293F-4384-BBD8-B94674384834} = {534F6BB1-2508-452E-ACE5-8690BA1771A7}
+		{D318FF4F-A0DD-447A-8847-7C3AB6D59F43} = {C2EE023B-32CC-4BA0-BD99-E4F6B7A4712B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA508949-C987-4A87-9B4B-C159C0230978}

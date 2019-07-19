@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Fabric;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.HttpSys;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.ServiceFabric.Services.Communication.AspNetCore;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
@@ -20,20 +21,22 @@ namespace AuthorsApp.Api
 			return new ServiceInstanceListener[]
 			{
 				new ServiceInstanceListener(serviceContext =>
-					new KestrelCommunicationListener(serviceContext, "ServiceEndpoint", (url, listener) =>
+					new HttpSysCommunicationListener(serviceContext, "ServiceEndpoint", (url, listener) =>
 					{
-						ServiceEventSource.Current.ServiceMessage(serviceContext, $"Starting Kestrel on {url}");
-
 						return new WebHostBuilder()
-									.UseKestrel()
-									.ConfigureServices(
-										services => services
-											.AddSingleton<StatelessServiceContext>(serviceContext))
-									.UseContentRoot(Directory.GetCurrentDirectory())
-									.UseStartup<Startup>()
-									.UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.None)
-									.UseUrls(url)
-									.Build();
+							.UseHttpSys(options =>
+							{
+								options.UrlPrefixes.Add("http://+:80/authors-v1/");
+								options.Authentication.Schemes = AuthenticationSchemes.None;
+								options.Authentication.AllowAnonymous = true;
+								options.MaxConnections = null;
+							})
+							.ConfigureServices(services => services.AddSingleton<StatelessServiceContext>(serviceContext))
+							.UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.None)
+							.UseContentRoot(Directory.GetCurrentDirectory())
+							.UseStartup<Startup>()
+							.UseUrls(url)
+							.Build();
 					}))
 			};
 		}

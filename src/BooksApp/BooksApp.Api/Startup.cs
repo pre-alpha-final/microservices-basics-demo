@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System.IO;
+using System.Reflection;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.PlatformAbstractions;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace BooksApp.Api
 {
@@ -18,6 +22,20 @@ namespace BooksApp.Api
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+			//services.AddTransient<IRemotingProxy, RemotingProxy>();
+			//services.AddTransient<IConfigHelper, ConfigHelper>();
+			services.AddSwaggerGen(e =>
+			{
+				e.SwaggerDoc("api", new Info
+				{
+					Title = "BooksApp title",
+					Version = "v1",
+				});
+				e.IncludeXmlComments(Path.Combine(
+					PlatformServices.Default.Application.ApplicationBasePath,
+					typeof(Startup).GetTypeInfo().Assembly.GetName().Name + ".xml"));
+				e.EnableAnnotations();
+			});
 		}
 
 		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -26,6 +44,12 @@ namespace BooksApp.Api
 			{
 				app.UseDeveloperExceptionPage();
 			}
+
+			app.UseSwagger();
+			app.UseSwaggerUI(c =>
+			{
+				c.SwaggerEndpoint("/books-v1/swagger/api/swagger.json", "v1");
+			});
 
 			app.UseMvc();
 		}

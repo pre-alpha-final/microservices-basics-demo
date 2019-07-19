@@ -7,6 +7,22 @@ Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "BooksApp", "BooksApp\BooksA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksApp.Api", "BooksApp.Api\BooksApp.Api.csproj", "{E9307327-9453-4A16-AA18-8B4EE3A827D7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 Deployment layer", "00 Deployment layer", "{6E548710-99E3-43D7-A5EA-F09B165ECEF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 Presentation layer", "10 Presentation layer", "{6B7B26CC-86D6-4989-A525-E6C8EAE7F3CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11 Stateless services", "11 Stateless services", "{2BD39CB6-A8DE-4E9F-A7B1-4767A230DDC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12 Stateful services", "12 Stateful services", "{FAA12FAF-27C2-4EBC-87E1-0E49F53513C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30 Domain layer", "30 Domain layer", "{D9F12A90-7E6E-44BD-B895-47F603B83641}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 Business layer", "20 Business layer", "{CAE41728-456F-43DA-AD14-4391C2DBA064}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40 Data layer", "40 Data layer", "{C993747C-8ED8-4014-A90A-5B153F90E827}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "50 Cross-Cutting layer", "50 Cross-Cutting layer", "{5F589E2F-E0B9-44CF-AD58-3A6A8C8D6315}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +50,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0BAFC2F2-85BE-4E77-AD56-F165DB8A4F1E} = {6E548710-99E3-43D7-A5EA-F09B165ECEF7}
+		{E9307327-9453-4A16-AA18-8B4EE3A827D7} = {6B7B26CC-86D6-4989-A525-E6C8EAE7F3CA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F8C29C2-FFDD-43A3-9DD3-88E1A8DD5103}
