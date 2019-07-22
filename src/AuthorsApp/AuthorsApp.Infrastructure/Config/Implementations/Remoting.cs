@@ -2,6 +2,6 @@
 {
 	public class Remoting : ConfigSectionBase, IRemoting
 	{
-		public string AuthorsAppFabricAddress => GetConfig(GetType().Name);
+		public string BooksAppFabricAddress => GetConfig(GetType().Name);
 	}
 }

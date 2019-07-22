@@ -3,7 +3,7 @@
   <Parameters>
     <Parameter Name="BooksApp.Api_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
     <Parameter Name="BooksApp.Api_InstanceCount" DefaultValue="-1" />
-    <Parameter Name="Remoting_AuthorsAppFabricAddress" DefaultValue="" />
+    <Parameter Name="Remoting_AuthorsAppFabricAddress" DefaultValue="fabric:/AuthorsApp/AuthorsApp.Api" />
   </Parameters>
   <ServiceManifestImport>
     <ServiceManifestRef ServiceManifestName="BooksApp.ApiPkg" ServiceManifestVersion="1.0.0" />

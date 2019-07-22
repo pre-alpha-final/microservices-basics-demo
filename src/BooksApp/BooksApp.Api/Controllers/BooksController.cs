@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AuthorsApp.Domain.Remoting;
 using BooksApp.Api.Dtos;
 using BooksApp.Core.Services;
-using BooksApp.Domain.ExternalRemoting;
 using BooksApp.Infrastructure;
 using BooksApp.Infrastructure.Config;
 using Microsoft.AspNetCore.Mvc;
@@ -56,18 +57,30 @@ namespace BooksApp.Api.Controllers
 		public async Task<IActionResult> Get(Guid id)
 		{
 			var book = await _bookService.Get(id);
-			return Ok(new BookDto
+			var authors = new List<Author>();
+			foreach (var authorId in book.Authors)
+			{
+				var author = await CreateAuthorsAppRemotingService().Get(authorId);
+				authors.Add(new Author
+				{
+					Id = author.Id,
+					Name = author.Name,
+					Nationality = author.Nationality
+				});
+			}
+
+			return Ok(new BookWithAuthorsDto
 			{
 				Id = book.Id,
 				Name = book.Name,
 				ReviewUrl = book.ReviewUrl,
-				Authors = book.Authors
+				Authors = authors
 			});
 		}
 
 		private IAuthorsAppRemoting CreateAuthorsAppRemotingService()
 		{
-			return _remotingProxy.Create<IAuthorsAppRemoting>(new Uri(_configHelper.Remoting.BooksAppFabricAddress));
+			return _remotingProxy.Create<IAuthorsAppRemoting>(new Uri(_configHelper.Remoting.AuthorsAppFabricAddress));
 		}
 	}
 }

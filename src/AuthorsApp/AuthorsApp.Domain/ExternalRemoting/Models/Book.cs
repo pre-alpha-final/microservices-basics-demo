@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AuthorsApp.Domain.ExternalRemoting.Models
+// Should be acquired from directly from target remoting assembly (e.g. via nuget)
+namespace BooksApp.Domain.Models
 {
 	public class Book
 	{

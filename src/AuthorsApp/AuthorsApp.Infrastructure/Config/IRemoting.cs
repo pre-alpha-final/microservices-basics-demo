@@ -2,6 +2,6 @@
 {
 	public interface IRemoting
 	{
-		string AuthorsAppFabricAddress { get; }
+		string BooksAppFabricAddress { get; }
 	}
 }
