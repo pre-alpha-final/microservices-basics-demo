@@ -1,5 +1,9 @@
 ﻿using System.IO;
 using System.Reflection;
+using BooksApp.Core.Services;
+using BooksApp.Core.Services.Implementation;
+using BooksApp.Data.Services;
+using BooksApp.Data.Services.Implementation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +26,8 @@ namespace BooksApp.Api
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+			services.AddTransient<IBookService, BookService>();
+			services.AddTransient<IBookRepository, BookRepositoryMock>();
 			//services.AddTransient<IRemotingProxy, RemotingProxy>();
 			//services.AddTransient<IConfigHelper, ConfigHelper>();
 			services.AddSwaggerGen(e =>

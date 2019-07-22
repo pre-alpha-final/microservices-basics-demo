@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using BooksApp.Api.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -18,7 +19,7 @@ namespace BooksApp.Api.Controllers
 		[HttpGet, SwaggerOperation(OperationId = nameof(GetAll))]
 		public async Task<IActionResult> GetAll()
 		{
-			return Ok(new List<string>());
+			return Ok(new List<BookDto>());
 		}
 
 		/// <summary>
