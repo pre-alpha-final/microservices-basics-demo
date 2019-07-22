@@ -5,6 +5,10 @@ using AuthorsApp.Core.Services;
 using AuthorsApp.Core.Services.Implementation;
 using AuthorsApp.Data.Services;
 using AuthorsApp.Data.Services.Implementation;
+using AuthorsApp.Infrastructure;
+using AuthorsApp.Infrastructure.Config;
+using AuthorsApp.Infrastructure.Config.Implementations;
+using AuthorsApp.Infrastructure.Implementations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -29,8 +33,8 @@ namespace AuthorsApp.Api
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 			services.AddTransient<IAuthorService, AuthorService>();
 			services.AddTransient<IAuthorRepository, AuthorRepositoryMock>();
-			//services.AddTransient<IRemotingProxy, RemotingProxy>();
-			//services.AddTransient<IConfigHelper, ConfigHelper>();
+			services.AddTransient<IRemotingProxy, RemotingProxy>();
+			services.AddTransient<IConfigHelper, ConfigHelper>();
 			services.AddSwaggerGen(e =>
 			{
 				e.SwaggerDoc("api", new Info

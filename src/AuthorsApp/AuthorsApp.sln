@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorsApp.Domain", "Author
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorsApp.Data", "AuthorsApp.Data\AuthorsApp.Data.csproj", "{B2356265-FB8F-4188-A843-C0D208CFB4EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorsApp.Infrastructure", "AuthorsApp.Infrastructure\AuthorsApp.Infrastructure.csproj", "{6B9EC241-0337-4E70-80C0-D10D15C62CC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,14 @@ Global
 		{B2356265-FB8F-4188-A843-C0D208CFB4EE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B2356265-FB8F-4188-A843-C0D208CFB4EE}.Release|x64.ActiveCfg = Release|Any CPU
 		{B2356265-FB8F-4188-A843-C0D208CFB4EE}.Release|x64.Build.0 = Release|Any CPU
+		{6B9EC241-0337-4E70-80C0-D10D15C62CC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B9EC241-0337-4E70-80C0-D10D15C62CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B9EC241-0337-4E70-80C0-D10D15C62CC8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6B9EC241-0337-4E70-80C0-D10D15C62CC8}.Debug|x64.Build.0 = Debug|Any CPU
+		{6B9EC241-0337-4E70-80C0-D10D15C62CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B9EC241-0337-4E70-80C0-D10D15C62CC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B9EC241-0337-4E70-80C0-D10D15C62CC8}.Release|x64.ActiveCfg = Release|Any CPU
+		{6B9EC241-0337-4E70-80C0-D10D15C62CC8}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +97,7 @@ Global
 		{6D599ACA-8DAB-4F9F-B639-BBA35FC1CBA4} = {FBDF99E4-C54C-4376-AD48-2F9011FC5FFE}
 		{8B7E728F-894B-47F8-8C59-3F1A3F424FC6} = {4A1AB51B-BDAD-4839-BB60-D532AC0A676A}
 		{B2356265-FB8F-4188-A843-C0D208CFB4EE} = {6E3FE5DC-31A9-4D9E-AD33-C03D410C0F3F}
+		{6B9EC241-0337-4E70-80C0-D10D15C62CC8} = {DD700438-1CE1-4B23-9615-D86C56204983}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA508949-C987-4A87-9B4B-C159C0230978}

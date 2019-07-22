@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AuthorsApp.Data.Services;
 using AuthorsApp.Domain.Models;
+using AuthorsApp.Domain.Remoting;
 
 namespace AuthorsApp.Core.Services.Implementation
 {
-	public class AuthorService : IAuthorService
+	public class AuthorService : IAuthorService, IAuthorsAppRemoting
 	{
 		private readonly IAuthorRepository _authorRepository;
 

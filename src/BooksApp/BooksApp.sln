@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksApp.Domain", "BooksApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksApp.Data", "BooksApp.Data\BooksApp.Data.csproj", "{67A1F222-BA7F-4E25-8CE6-E15CD49ECD23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksApp.Infrastructure", "BooksApp.Infrastructure\BooksApp.Infrastructure.csproj", "{1CB233FC-D156-4ED4-9F94-B5891E16E982}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,14 @@ Global
 		{67A1F222-BA7F-4E25-8CE6-E15CD49ECD23}.Release|Any CPU.Build.0 = Release|Any CPU
 		{67A1F222-BA7F-4E25-8CE6-E15CD49ECD23}.Release|x64.ActiveCfg = Release|Any CPU
 		{67A1F222-BA7F-4E25-8CE6-E15CD49ECD23}.Release|x64.Build.0 = Release|Any CPU
+		{1CB233FC-D156-4ED4-9F94-B5891E16E982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB233FC-D156-4ED4-9F94-B5891E16E982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB233FC-D156-4ED4-9F94-B5891E16E982}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1CB233FC-D156-4ED4-9F94-B5891E16E982}.Debug|x64.Build.0 = Debug|Any CPU
+		{1CB233FC-D156-4ED4-9F94-B5891E16E982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB233FC-D156-4ED4-9F94-B5891E16E982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CB233FC-D156-4ED4-9F94-B5891E16E982}.Release|x64.ActiveCfg = Release|Any CPU
+		{1CB233FC-D156-4ED4-9F94-B5891E16E982}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +97,7 @@ Global
 		{87232ECB-F1D5-450C-B99F-EA30E8AFCC10} = {CAE41728-456F-43DA-AD14-4391C2DBA064}
 		{CED663C9-2E01-45C9-B863-EF3B3FC86E1B} = {D9F12A90-7E6E-44BD-B895-47F603B83641}
 		{67A1F222-BA7F-4E25-8CE6-E15CD49ECD23} = {C993747C-8ED8-4014-A90A-5B153F90E827}
+		{1CB233FC-D156-4ED4-9F94-B5891E16E982} = {5F589E2F-E0B9-44CF-AD58-3A6A8C8D6315}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F8C29C2-FFDD-43A3-9DD3-88E1A8DD5103}

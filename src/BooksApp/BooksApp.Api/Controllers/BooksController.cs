@@ -28,7 +28,7 @@ namespace BooksApp.Api.Controllers
 		public async Task<IActionResult> GetAll()
 		{
 			var books = await _bookService.GetAll();
-			return Ok(books.Take(100).Select(e => new BookDto
+			return Ok(books.Take(20).Select(e => new BookDto
 			{
 				Id = e.Id,
 				Name = e.Name,

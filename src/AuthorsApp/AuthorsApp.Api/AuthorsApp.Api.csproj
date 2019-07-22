@@ -26,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AuthorsApp.Core\AuthorsApp.Core.csproj" />
     <ProjectReference Include="..\AuthorsApp.Data\AuthorsApp.Data.csproj" />
+    <ProjectReference Include="..\AuthorsApp.Infrastructure\AuthorsApp.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
