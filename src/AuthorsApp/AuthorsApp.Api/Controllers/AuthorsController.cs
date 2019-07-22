@@ -1,6 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using AuthorsApp.Api.Dtos;
+using AuthorsApp.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -9,6 +11,13 @@ namespace AuthorsApp.Api.Controllers
 	[Route("")]
 	public class AuthorsController : Controller
 	{
+		private readonly IAuthorService _authorService;
+
+		public AuthorsController(IAuthorService authorService)
+		{
+			_authorService = authorService;
+		}
+
 		/// <summary>
 		/// Get all authors
 		/// </summary>
@@ -18,7 +27,14 @@ namespace AuthorsApp.Api.Controllers
 		[HttpGet, SwaggerOperation(OperationId = nameof(GetAll))]
 		public async Task<IActionResult> GetAll()
 		{
-			return Ok(new List<string>());
+			var authors = await _authorService.GetAll();
+			return Ok(authors.Take(20).Select(e => new AuthorDto
+			{
+				Id = e.Id,
+				Name = e.Name,
+				Nationality = e.Nationality,
+				Books = e.Books
+			}));
 		}
 
 		/// <summary>
@@ -28,9 +44,17 @@ namespace AuthorsApp.Api.Controllers
 		/// Returns author
 		/// </remarks>
 		[HttpGet, SwaggerOperation(OperationId = nameof(Get))]
+		[Route("{id}")]
 		public async Task<IActionResult> Get(Guid id)
 		{
-			return Ok(new List<string>());
+			var author = await _authorService.Get(id);
+			return Ok(new AuthorDto
+			{
+				Id = author.Id,
+				Name = author.Name,
+				Nationality = author.Nationality,
+				Books = author.Books
+			});
 		}
 	}
 }

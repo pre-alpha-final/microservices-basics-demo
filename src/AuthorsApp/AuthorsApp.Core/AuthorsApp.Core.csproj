@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Implementation\" />
+    <ProjectReference Include="..\AuthorsApp.Data\AuthorsApp.Data.csproj" />
+    <ProjectReference Include="..\AuthorsApp.Domain\AuthorsApp.Domain.csproj" />
   </ItemGroup>
 
 </Project>
