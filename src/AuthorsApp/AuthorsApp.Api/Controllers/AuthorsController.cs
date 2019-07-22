@@ -3,6 +3,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using AuthorsApp.Api.Dtos;
 using AuthorsApp.Core.Services;
+using AuthorsApp.Domain.ExternalRemoting;
+using AuthorsApp.Infrastructure;
+using AuthorsApp.Infrastructure.Config;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -12,10 +15,15 @@ namespace AuthorsApp.Api.Controllers
 	public class AuthorsController : Controller
 	{
 		private readonly IAuthorService _authorService;
+		private readonly IRemotingProxy _remotingProxy;
+		private readonly IConfigHelper _configHelper;
 
-		public AuthorsController(IAuthorService authorService)
+		public AuthorsController(IAuthorService authorService, IRemotingProxy remotingProxy,
+			IConfigHelper configHelper)
 		{
 			_authorService = authorService;
+			_remotingProxy = remotingProxy;
+			_configHelper = configHelper;
 		}
 
 		/// <summary>
@@ -55,6 +63,11 @@ namespace AuthorsApp.Api.Controllers
 				Nationality = author.Nationality,
 				Books = author.Books
 			});
+		}
+
+		private IBooksAppRemoting CreateBooksAppRemotingService()
+		{
+			return _remotingProxy.Create<IBooksAppRemoting>(new Uri(_configHelper.Remoting.AuthorsAppFabricAddress));
 		}
 	}
 }

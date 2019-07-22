@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using AuthorsApp.Domain.Models;
-using AuthorsApp.Infrastructure;
+using BooksApp.Domain.ExternalRemoting.Models;
+using BooksApp.Infrastructure;
 
-namespace AuthorsApp.Domain.Remoting
+namespace BooksApp.Domain.ExternalRemoting
 {
 	public interface IAuthorsAppRemoting : IRemotingBase
 	{
