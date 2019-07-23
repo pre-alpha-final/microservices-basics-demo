@@ -2,15 +2,10 @@
 <ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="BooksAppType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
     <Parameter Name="BooksApp.Remoting_InstanceCount" DefaultValue="-1" />
-    <Parameter Name="BooksApp.Remoting_InstanceCount" DefaultValue="-1" />
     <Parameter Name="BooksApp.Api_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
     <Parameter Name="BooksApp.Api_InstanceCount" DefaultValue="-1" />
-    <Parameter Name="Remoting_AuthorsAppFabricAddress" DefaultValue="fabric:/AuthorsApp/AuthorsApp.Api" />
+    <Parameter Name="Remoting_AuthorsAppFabricAddress" DefaultValue="fabric:/AuthorsApp/AuthorsApp.Remoting" />
   </Parameters>
-  <ServiceManifestImport>
-    <ServiceManifestRef ServiceManifestName="BooksApp.RemotingPkg" ServiceManifestVersion="1.0.0" />
-    <ConfigOverrides />
-  </ServiceManifestImport>
   <ServiceManifestImport>
     <ServiceManifestRef ServiceManifestName="BooksApp.RemotingPkg" ServiceManifestVersion="1.0.0" />
     <ConfigOverrides />
@@ -31,11 +26,6 @@
     </EnvironmentOverrides>
   </ServiceManifestImport>
   <DefaultServices>
-    <Service Name="BooksApp.Remoting" ServicePackageActivationMode="ExclusiveProcess">
-      <StatelessService ServiceTypeName="BooksApp.RemotingType" InstanceCount="[BooksApp.Remoting_InstanceCount]">
-        <SingletonPartition />
-      </StatelessService>
-    </Service>
     <Service Name="BooksApp.Remoting" ServicePackageActivationMode="ExclusiveProcess">
       <StatelessService ServiceTypeName="BooksApp.RemotingType" InstanceCount="[BooksApp.Remoting_InstanceCount]">
         <SingletonPartition />

@@ -4,7 +4,7 @@
     <Parameter Name="AuthorsApp.Remoting_InstanceCount" DefaultValue="-1" />
     <Parameter Name="AuthorsApp.Api_ASPNETCORE_ENVIRONMENT" DefaultValue="" />
     <Parameter Name="AuthorsApp.Api_InstanceCount" DefaultValue="-1" />
-    <Parameter Name="Remoting_BooksAppFabricAddress" DefaultValue="fabric:/BooksApp/BooksApp.Api" />
+    <Parameter Name="Remoting_BooksAppFabricAddress" DefaultValue="fabric:/BooksApp/BooksApp.Remoting" />
   </Parameters>
   <ServiceManifestImport>
     <ServiceManifestRef ServiceManifestName="AuthorsApp.RemotingPkg" ServiceManifestVersion="1.0.0" />

@@ -1,36 +1,42 @@
 using System;
 using System.Collections.Generic;
 using System.Fabric;
-using System.Threading;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using BooksApp.Core.Services;
+using BooksApp.Domain.Models;
+using BooksApp.Domain.Remoting;
+using Castle.Core.Internal;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
+using Microsoft.ServiceFabric.Services.Remoting.Runtime;
 using Microsoft.ServiceFabric.Services.Runtime;
 
+[assembly: InternalsVisibleTo(InternalsVisible.ToDynamicProxyGenAssembly2)]
 namespace BooksApp.Remoting
 {
-	internal sealed class Remoting : StatelessService
+	public class Remoting : StatelessService, IBooksAppRemoting
 	{
-		public Remoting(StatelessServiceContext context)
+		private readonly IBookService _bookService;
+
+		public Remoting(StatelessServiceContext context, IBookService bookService)
 			: base(context)
-		{ }
+		{
+			_bookService = bookService;
+		}
 
 		protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
 		{
-			return new ServiceInstanceListener[0];
+			return this.CreateServiceRemotingInstanceListeners();
 		}
 
-		protected override async Task RunAsync(CancellationToken cancellationToken)
+		public Task<IEnumerable<Book>> GetAll()
 		{
-			long iterations = 0;
+			return _bookService.GetAll();
+		}
 
-			while (true)
-			{
-				cancellationToken.ThrowIfCancellationRequested();
-
-				ServiceEventSource.Current.ServiceMessage(this.Context, "Working-{0}", ++iterations);
-
-				await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
-			}
+		public Task<Book> Get(Guid id)
+		{
+			return _bookService.Get(id);
 		}
 	}
 }

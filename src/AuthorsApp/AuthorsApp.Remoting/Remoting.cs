@@ -1,36 +1,42 @@
 using System;
 using System.Collections.Generic;
 using System.Fabric;
-using System.Threading;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using AuthorsApp.Core.Services;
+using AuthorsApp.Domain.Models;
+using AuthorsApp.Domain.Remoting;
+using Castle.Core.Internal;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
+using Microsoft.ServiceFabric.Services.Remoting.Runtime;
 using Microsoft.ServiceFabric.Services.Runtime;
 
+[assembly: InternalsVisibleTo(InternalsVisible.ToDynamicProxyGenAssembly2)]
 namespace AuthorsApp.Remoting
 {
-	internal sealed class Remoting : StatelessService
+	public class Remoting : StatelessService, IAuthorsAppRemoting
 	{
-		public Remoting(StatelessServiceContext context)
+		private readonly IAuthorService _authorService;
+
+		public Remoting(StatelessServiceContext context, IAuthorService authorService)
 			: base(context)
-		{ }
+		{
+			_authorService = authorService;
+		}
 
 		protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
 		{
-			return new ServiceInstanceListener[0];
+			return this.CreateServiceRemotingInstanceListeners();
 		}
 
-		protected override async Task RunAsync(CancellationToken cancellationToken)
+		public Task<IEnumerable<Author>> GetAll()
 		{
-			long iterations = 0;
+			return _authorService.GetAll();
+		}
 
-			while (true)
-			{
-				cancellationToken.ThrowIfCancellationRequested();
-
-				ServiceEventSource.Current.ServiceMessage(this.Context, "Working-{0}", ++iterations);
-
-				await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
-			}
+		public Task<Author> Get(Guid id)
+		{
+			return _authorService.Get(id);
 		}
 	}
 }

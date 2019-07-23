@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using BooksApp.Data.Services;
 using BooksApp.Domain.Models;
-using BooksApp.Domain.Remoting;
 
 namespace BooksApp.Core.Services.Implementation
 {
-	public class BookService : IBookService, IBooksAppRemoting
+	public class BookService : IBookService
 	{
 		private readonly IBookRepository _bookRepository;
 
