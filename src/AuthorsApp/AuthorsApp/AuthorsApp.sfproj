@@ -32,6 +32,7 @@
     <ProjectReference Include="..\AuthorsApp.Api\AuthorsApp.Api.csproj">
       <ServiceLaunchUrl>http://{MachineName}:{ServicePort}/api/values</ServiceLaunchUrl>
     </ProjectReference>
+    <ProjectReference Include="..\AuthorsApp.Remoting\AuthorsApp.Remoting.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

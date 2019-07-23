@@ -23,13 +23,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40 Data layer", "40 Data la
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "50 Cross-Cutting layer", "50 Cross-Cutting layer", "{DD700438-1CE1-4B23-9615-D86C56204983}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorsApp.Core", "AuthorsApp.Core\AuthorsApp.Core.csproj", "{6D599ACA-8DAB-4F9F-B639-BBA35FC1CBA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorsApp.Core", "AuthorsApp.Core\AuthorsApp.Core.csproj", "{6D599ACA-8DAB-4F9F-B639-BBA35FC1CBA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorsApp.Domain", "AuthorsApp.Domain\AuthorsApp.Domain.csproj", "{8B7E728F-894B-47F8-8C59-3F1A3F424FC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorsApp.Domain", "AuthorsApp.Domain\AuthorsApp.Domain.csproj", "{8B7E728F-894B-47F8-8C59-3F1A3F424FC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorsApp.Data", "AuthorsApp.Data\AuthorsApp.Data.csproj", "{B2356265-FB8F-4188-A843-C0D208CFB4EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorsApp.Data", "AuthorsApp.Data\AuthorsApp.Data.csproj", "{B2356265-FB8F-4188-A843-C0D208CFB4EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorsApp.Infrastructure", "AuthorsApp.Infrastructure\AuthorsApp.Infrastructure.csproj", "{6B9EC241-0337-4E70-80C0-D10D15C62CC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorsApp.Infrastructure", "AuthorsApp.Infrastructure\AuthorsApp.Infrastructure.csproj", "{6B9EC241-0337-4E70-80C0-D10D15C62CC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorsApp.Remoting", "AuthorsApp.Remoting\AuthorsApp.Remoting.csproj", "{2B7288B8-7488-4099-A03A-BFAC8ACCA467}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,14 @@ Global
 		{6B9EC241-0337-4E70-80C0-D10D15C62CC8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6B9EC241-0337-4E70-80C0-D10D15C62CC8}.Release|x64.ActiveCfg = Release|Any CPU
 		{6B9EC241-0337-4E70-80C0-D10D15C62CC8}.Release|x64.Build.0 = Release|Any CPU
+		{2B7288B8-7488-4099-A03A-BFAC8ACCA467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B7288B8-7488-4099-A03A-BFAC8ACCA467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B7288B8-7488-4099-A03A-BFAC8ACCA467}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2B7288B8-7488-4099-A03A-BFAC8ACCA467}.Debug|x64.Build.0 = Debug|Any CPU
+		{2B7288B8-7488-4099-A03A-BFAC8ACCA467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B7288B8-7488-4099-A03A-BFAC8ACCA467}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B7288B8-7488-4099-A03A-BFAC8ACCA467}.Release|x64.ActiveCfg = Release|Any CPU
+		{2B7288B8-7488-4099-A03A-BFAC8ACCA467}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +108,7 @@ Global
 		{8B7E728F-894B-47F8-8C59-3F1A3F424FC6} = {4A1AB51B-BDAD-4839-BB60-D532AC0A676A}
 		{B2356265-FB8F-4188-A843-C0D208CFB4EE} = {6E3FE5DC-31A9-4D9E-AD33-C03D410C0F3F}
 		{6B9EC241-0337-4E70-80C0-D10D15C62CC8} = {DD700438-1CE1-4B23-9615-D86C56204983}
+		{2B7288B8-7488-4099-A03A-BFAC8ACCA467} = {854ACA02-8A51-4CD6-8DF4-6E4129A04841}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA508949-C987-4A87-9B4B-C159C0230978}

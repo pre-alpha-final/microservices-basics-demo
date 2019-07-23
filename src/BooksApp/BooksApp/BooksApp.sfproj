@@ -32,6 +32,7 @@
     <ProjectReference Include="..\BooksApp.Api\BooksApp.Api.csproj">
       <ServiceLaunchUrl>http://{MachineName}:{ServicePort}/api/values</ServiceLaunchUrl>
     </ProjectReference>
+    <ProjectReference Include="..\BooksApp.Remoting\BooksApp.Remoting.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
